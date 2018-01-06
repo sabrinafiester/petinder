@@ -23,9 +23,9 @@ myApp.config(function($routeProvider, $locationProvider) {
       //   }
       //}
     })
-    .when('/info', {
-      templateUrl: '/views/templates/info.html',
-      controller: 'InfoController',
+    .when('/petDetails', {
+      templateUrl: '/views/templates/petDetails.html',
+      controller: 'PetDetailsController',
       // UNCOMMENT TO RE-ENABLE AUTHENTICATION
       // resolve: {
       //   getuser : function(UserService){

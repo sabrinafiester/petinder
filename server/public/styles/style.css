@@ -1,29 +1,83 @@
-//zany font declaration
+/*PET TINDER CSS*/
+
+
+/*FONTS AND ICONS AND MISC STYLES*/
 @font-face {
     font-family: Sniglet;
     src: url("assets/fonts/Sniglet-ExtraBold.otf") format("opentype");
 }
+@font-face {
+    font-family: Sniglet Regular;
+    src: url("assets/fonts/Sniglet-Regular.otf") format("opentype");
+}
+.pet-nav .fa-cog{
+  top: 0;
+  left: 0;
+  display: block;
+  padding-top: 5px;
+  color: #F5EFED;
+}
+.icon-hover:hover{
+    transition: opacity 1s, transform 1s;
+    transform: rotate(-30deg) ;
+}
+#redPaw img{
+  max-height: 100px;
+}
+#greenPaw img{
+  max-height: 100px;
+}
+.flip-horizontal { -webkit-transform: matrix(-1, 0, 0, 1, 0, 0) }
 
+/*BASIC ELEMENTS*/
 body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   font-size: 14px;
 }
+main{
+  margin: 50px 0;
+}
+
+.header-link{
+  color: #F5EFED;
+}
+.header-link:hover{
+  text-decoration: none;
+  text-transform: none;
+  color: #F5EFED;
+}
 
 h1{
   font-family: "Sniglet", sans-serif;
 }
 
-.instructions .container h1 {
+
+/*NAVIGATION*/
+.pet-nav  .container a h1 {
   font-size: 32px;
   font-weight: 600;
+  float: left!important;
 }
 
-.instructions {
-  background-color: #333333;
-  color: #DDDDDD;
+.pet-nav {
+  background-color: #2292A4;
+  color: #F5EFED;
   padding: 15px;
+  overflow: hidden;
+}
+
+.pet-nav  span a {
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.pet-nav  a.active {
+  background-color: #4CAF50;
+  color: white;
 }
 
 #entryForm {
@@ -59,7 +113,7 @@ h1{
 }
 
 .navbar {
-  background-color: #333333;
+  background-color: ;
   width: 100%;
   border-radius: 0px;
 }
@@ -89,10 +143,7 @@ li a:hover {
   color: #eee;
 }
 
-
-//homepage styles
-.home-container {
-    background: url(https://images.unsplash.com/photo-1415369629372-26f2fe60c467);
-    background-size: cover;
-    background-position: center; 
+.image-box {
+  background-color: blue;
+  padding: 5px;
 }

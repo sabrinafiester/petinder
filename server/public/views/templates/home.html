@@ -1,19 +1,26 @@
-<div class="container home-container">
-    <a href="/info.html">
-        <img id="mainPhoto" src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/40578214/1/?bust=1515048857&width=300" />
-    </a>
-    <h1 id="name" class="lead">Gus</h1>
-    <div id="pawPrints">
-        <div id="redPaw">
+<div class="container container-fluid">
+    <div class="row">
+        <a href="/info.html">
+            <img id="mainPhoto" src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/40578214/1/?bust=1515048857&width=300" />
+        </a>
+    </div>
+    <h2 id="name" class="lead">Gus</h1>
+    <div id="pawPrints" class="row">
+        <div class="col-xs-6" id="redPaw">
           <a href="#">
-            <img src="http://hddfhm.com/images/red-pawprint-clipart-6.png" />
+            <img class="img-fluid flip-horizontal" src="assets/images/red-paw.png" />
           </a>
         </div>
-        <div id="greenPaw">
+        <div class="col-xs-6 pull-right" id="greenPaw">
             <a href="#">
-              <img src="http://www.clker.com/cliparts/u/6/s/a/y/F/green-paw-print-hi.png" />
+             <img class="img-fluid flip-horizontal" src="assets/images/green-paw.png" />
             </a>
         </div>
+    </div>
+    <div id="description" class="hide">
+      <h3>Description:</h3>
+      <p>Vommit food and eat it again then cats take over the world, yet meow meow, i tell my human pushes butt to face or meow meow, i tell my human loves cheeseburgers meow. Jump on human and sleep on her all night long be long in the bed, purr in the morning and then give a bite to every human around for not waking up request food, purr loud scratch the walls, the floor, the windows, the humans try to hold own back foot to clean it but foot reflexively kicks you in face, go into a rage and bite own foot, hard. Meowing non stop for food hunt by meowing loudly at 5am next to human slave food dispenser for chase imaginary bugs, or meow all night having their mate disturbing sleeping humans.</p>
+      <a href="#" class="btn btn-primary">Contact</a>
     </div>
     <!-- <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
     <form ng-submit="lc.login()">
