@@ -25,7 +25,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     })
     .when('/petDetails', {
       templateUrl: '/views/templates/petDetails.html',
-      controller: 'PetDetailsController',
+      controller: 'PetsController',
       // UNCOMMENT TO RE-ENABLE AUTHENTICATION
       // resolve: {
       //   getuser : function(UserService){
