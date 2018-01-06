@@ -1,7 +1,7 @@
 /*zany font declaration*/
 @font-face {
     font-family: Sniglet;
-    src: url("assets/Sniglet-ExtraBold.otf") format("opentype");
+    src: url("assets/fonts/Sniglet-ExtraBold.otf") format("opentype");
 }
 
 body, html {
