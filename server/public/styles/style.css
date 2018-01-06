@@ -1,8 +1,18 @@
+//zany font declaration
+@font-face {
+    font-family: Sniglet;
+    src: url("assets/Sniglet-ExtraBold.otf") format("opentype");
+}
+
 body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   font-size: 14px;
+}
+
+h1{
+  font-family: "Sniglet", sans-serif;
 }
 
 .instructions .container h1 {
@@ -77,4 +87,12 @@ li a {
 li a:hover {
   text-decoration: underline;
   color: #eee;
+}
+
+
+//homepage styles
+.home-container {
+    background: url(https://images.unsplash.com/photo-1415369629372-26f2fe60c467);
+    background-size: cover;
+    background-position: center; 
 }
