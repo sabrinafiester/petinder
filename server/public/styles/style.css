@@ -1,9 +1,22 @@
-/*zany font declaration*/
+/*PET TINDER CSS*/
+
+
+/*FONTS AND ICONS*/
 @font-face {
     font-family: Sniglet;
     src: url("assets/fonts/Sniglet-ExtraBold.otf") format("opentype");
 }
-
+.pet-nav .fa-cog{
+  top: 0;
+  left: 0;
+  display: block;
+  padding-top: 5px;
+  color: #F5EFED;
+}
+.icon-hover:hover{
+    transition: opacity 1s, transform 1s;
+    transform: rotate(-30deg) ;
+}
 body, html {
   margin: 0;
   padding: 0;
@@ -40,16 +53,11 @@ h1{
   overflow: hidden;
 }
 
-
 .pet-nav  span a {
   float: right;
   text-align: center;
   text-decoration: none;
   font-size: 17px;
-}
-
-.pet-nav  a:hover {
-  background-color: #ddd;
 }
 
 .pet-nav  a.active {
