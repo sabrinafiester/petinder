@@ -16,20 +16,22 @@ myApp.config(function($routeProvider, $locationProvider) {
     .when('/user', {
       templateUrl: '/views/templates/user.html',
       controller: 'UserController as uc',
-      resolve: {
-        getuser : function(UserService){
-          return UserService.getuser();
-        }
-      }
+      // UNCOMMENT TO RE-ENABLE AUTHENTICATION
+      // resolve: {
+      //   getuser : function(UserService){
+      //     return UserService.getuser();
+      //   }
+      //}
     })
     .when('/info', {
       templateUrl: '/views/templates/info.html',
       controller: 'InfoController',
-      resolve: {
-        getuser : function(UserService){
-          return UserService.getuser();
-        }
-      }
+      // UNCOMMENT TO RE-ENABLE AUTHENTICATION
+      // resolve: {
+      //   getuser : function(UserService){
+      //     return UserService.getuser();
+      //   }
+      // }
     })
     .otherwise({
       redirectTo: 'home'
