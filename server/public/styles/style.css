@@ -1,10 +1,14 @@
 /*PET TINDER CSS*/
 
 
-/*FONTS AND ICONS*/
+/*FONTS AND ICONS AND MISC STYLES*/
 @font-face {
     font-family: Sniglet;
     src: url("assets/fonts/Sniglet-ExtraBold.otf") format("opentype");
+}
+@font-face {
+    font-family: Sniglet Regular;
+    src: url("assets/fonts/Sniglet-Regular.otf") format("opentype");
 }
 .pet-nav .fa-cog{
   top: 0;
@@ -17,6 +21,15 @@
     transition: opacity 1s, transform 1s;
     transform: rotate(-30deg) ;
 }
+#redPaw img{
+  max-height: 100px;
+}
+#greenPaw img{
+  max-height: 100px;
+}
+.flip-horizontal { -webkit-transform: matrix(-1, 0, 0, 1, 0, 0) }
+
+/*BASIC ELEMENTS*/
 body, html {
   margin: 0;
   padding: 0;
@@ -40,6 +53,8 @@ h1{
   font-family: "Sniglet", sans-serif;
 }
 
+
+/*NAVIGATION*/
 .pet-nav  .container a h1 {
   font-size: 32px;
   font-weight: 600;
@@ -98,7 +113,7 @@ h1{
 }
 
 .navbar {
-  background-color: #333333;
+  background-color: ;
   width: 100%;
   border-radius: 0px;
 }
