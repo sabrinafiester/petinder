@@ -13,7 +13,7 @@ var petRouter = require('./routes/pets.router.js');
 
 var petFinderApi = require('./routes/petfinder.api.js');
 
-var port = process.env.PORT || 5001
+var port = process.env.PORT || 5000;
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -33,8 +33,6 @@ app.use(passport.session());
 app.use('/register', registerRouter);
 app.use('/user', userRouter);
 app.use('/pets', petRouter);
-
-// PetFinder API
 app.use('/petfinder', petFinderApi);
 
 // Catch all bucket, must be last!
@@ -44,3 +42,4 @@ app.use('/', indexRouter);
 app.listen(port, function(){
    console.log('Listening on port:', port);
 });
+
