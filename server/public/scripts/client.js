@@ -7,7 +7,7 @@ myApp.config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/home', {
       templateUrl: '/views/templates/home.html',
-      controller: 'LoginController as lc',
+      controller: 'PetsController as pc',
     })
     .when('/register', {
       templateUrl: '/views/templates/register.html',
@@ -23,7 +23,7 @@ myApp.config(function($routeProvider, $locationProvider) {
       //   }
       //}
     })
-    .when('/petDetails', {
+    .when('/pets', {
       templateUrl: '/views/templates/petDetails.html',
       controller: 'PetsController',
       // UNCOMMENT TO RE-ENABLE AUTHENTICATION
