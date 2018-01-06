@@ -33,6 +33,10 @@ myApp.config(function($routeProvider, $locationProvider) {
       //   }
       // }
     })
+    .when('/login', {
+      templateUrl: '/views/templates/login.html',
+      controller: 'LoginController as lc'
+    })
     .otherwise({
       redirectTo: 'home'
     });
