@@ -10,20 +10,51 @@ body, html {
   font-family: sans-serif;
   font-size: 14px;
 }
+main{
+  margin: 50px 0;
+}
+
+.header-link{
+  color: #F5EFED;
+}
+.header-link:hover{
+  text-decoration: none;
+  text-transform: none;
+  color: #F5EFED;
+}
 
 h1{
   font-family: "Sniglet", sans-serif;
 }
 
-.instructions .container h1 {
+.pet-nav  .container a h1 {
   font-size: 32px;
   font-weight: 600;
+  float: left!important;
 }
 
-.instructions {
-  background-color: #333333;
-  color: #DDDDDD;
+.pet-nav {
+  background-color: #2292A4;
+  color: #F5EFED;
   padding: 15px;
+  overflow: hidden;
+}
+
+
+.pet-nav  span a {
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.pet-nav  a:hover {
+  background-color: #ddd;
+}
+
+.pet-nav  a.active {
+  background-color: #4CAF50;
+  color: white;
 }
 
 #entryForm {
