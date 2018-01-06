@@ -1,4 +1,4 @@
-//zany font declaration
+/*zany font declaration*/
 @font-face {
     font-family: Sniglet;
     src: url("assets/Sniglet-ExtraBold.otf") format("opentype");
@@ -89,10 +89,7 @@ li a:hover {
   color: #eee;
 }
 
-
-//homepage styles
-.home-container {
-    background: url(https://images.unsplash.com/photo-1415369629372-26f2fe60c467);
-    background-size: cover;
-    background-position: center; 
+.image-box {
+  background-color: blue;
+  padding: 5px;
 }
