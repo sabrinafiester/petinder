@@ -4,6 +4,9 @@ myApp.controller('PetsController', function (UserService, PetsService) {
     self.userService = UserService;
     self.petsService = PetsService;
     self.pets = PetsService.pets;
+    self.userFutureFriends = PetsService.getFutureFriends();
+    self.futureFriendDetails = [];
+
     // self.currentPet = self.pets[self.petsService.count];
     console.log('PetsController loaded');
 
@@ -16,8 +19,8 @@ myApp.controller('PetsController', function (UserService, PetsService) {
         self.petsService.currentPet.photos = Object.values(self.petsService.pets[self.petsService.count].media.photos);
     };
 
-    self.lovePet = function (petId, name) {
-        PetsService.saveThisPet(petId, name, true);
+    self.lovePet = function (petId, name, description, image) {
+        PetsService.saveThisPet(petId, name, true, description, image);
         //saves pet info when like is clicked
        // console.log('save button clicked');
       //  console.log('pet loved is', petId);
@@ -45,6 +48,5 @@ myApp.controller('PetsController', function (UserService, PetsService) {
     self.hideMore = function () {
         self.showPetData = false;
     }
-
 
 });
