@@ -11,6 +11,7 @@ myApp.controller('PetsController', function (UserService, PetsService) {
         //need this line i think
         // self.currentPet = PetsService.getPets();
         self.petsService.count = self.petsService.count+1;
+        PetsService.checkCurrentPet(self.petsService.pets[self.petsService.count])
         self.petsService.currentPet.data = self.petsService.pets[self.petsService.count];
         self.petsService.currentPet.photos = Object.values(self.petsService.pets[self.petsService.count].media.photos);
     };
