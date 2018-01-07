@@ -11,6 +11,7 @@ myApp.service('PetsService', ['$http', function ($http) {
 
     self.getPets = function () {
         console.log('pets service - getPets()')
+       
         $http.get('/petfinder/getPetsByZip/55113/cat').then(function (response) {
             //  console.log('response.data is', response);
             //   console.log('type of response.data is', typeof response.data);

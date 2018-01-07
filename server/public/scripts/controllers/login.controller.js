@@ -24,6 +24,7 @@ myApp.controller('LoginController', function($http, $location, UserService) {
         $http.post('/', vm.user).then(function(response) {
           if(response.data.username) {
             console.log('LoginController -- login -- success: ', response.data);
+            UserService.userObject.species = response.data.species;
             // location works with SPA (ng-route)
             $location.path('/home'); // http://localhost:5000/#/user
           } else {
