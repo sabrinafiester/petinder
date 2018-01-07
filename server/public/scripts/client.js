@@ -45,7 +45,11 @@ myApp.config(function($routeProvider, $locationProvider) {
     })
     .when('/login', {
       templateUrl: '/views/templates/login.html',
-      controller: 'LoginController as lc'
+      controller: 'LoginController as lc',
+    })
+    .when('/contact', {
+      templateUrl: '/views/templates/contact.html',
+      controller: 'PetsController as pc',
     })
     .otherwise({
       redirectTo: 'home'
