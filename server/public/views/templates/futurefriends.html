@@ -4,10 +4,25 @@
     <div class="row album">
         <div class="container">
             <div class="row">
-                <div ng-repeat="pet in pc.petsService.futureFriends" class="card">
-                    <img class="img-fluid gallery-image" style="height:280px; width:100%; display: block;" ng-src="{{ pet.image }}">
+                <div ng-repeat="pet in pc.petsService.futureFriends" class="card" ng-click="PetService.showMore = !PetService.showMore;">
+                    <div class="mx-auto">
+                        <img class="img-fluid gallery-image" style="max-height: 200px;" ng-src="{{ pet.image }}">
+                    </div>
                     <p class="card-text text-center">{{ pet.name }}</p>
+                    <div>
+                        <div id="description" class="hide information small" ng-show="PetService.showMore">
+                            <h3>Description</h3>
+                            <p ng-if="pet.description">
+                                {{pet.description}}
+                            </p>
+                            <p ng-if="!pet.description">
+                                Sorry! I only have my adorable photo right now. If you want to learn more about me, all you have to do is
+                                <a href="#contact">contact</a> the shelter I come from and ask!
+                            </p>
 
+                            <a href="#contact" class="btn btn-primary btn-info col-6">Contact Shelter</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

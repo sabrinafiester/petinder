@@ -212,6 +212,7 @@ a .fa-times{
 
 .gallery-image{
   cursor: pointer;
+  margin: 15px;
 }
 
 .future-cards .card{
