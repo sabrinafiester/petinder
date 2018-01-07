@@ -16,8 +16,8 @@ myApp.controller('PetsController', function (UserService, PetsService) {
         self.petsService.currentPet.photos = Object.values(self.petsService.pets[self.petsService.count].media.photos);
     };
 
-    self.lovePet = function (petId) {
-        PetsService.saveThisPet(petId, true);
+    self.lovePet = function (petId, name) {
+        PetsService.saveThisPet(petId, name, true);
         //saves pet info when like is clicked
        // console.log('save button clicked');
       //  console.log('pet loved is', petId);

@@ -1,8 +1,11 @@
 <div class="container container-fluid card" ng-if="pc.petsService.currentPet.data.description">
+  <span class="toaster" ng-show="showMe">
+    <p>
+      <a ng-click="showMe = false" href="">X</a> Added a pet to your saved pets!</p>
+  </span>
   <div class="row">
-    <!-- <p>Added {{pc.petsService.currentPet.data.name}} to your saved pets!</p> -->
     <div class="mx-auto text-center" ng-click="PetService.showMore = !PetService.showMore;">
-      <h2 id="name" class="lead">{{pc.petsService.currentPet.data.name}}</h2>
+      <h2 id="name">{{pc.petsService.currentPet.data.name}}</h2>
       <img id="mainPhoto" ng-if="pc.petsService.currentPet.photos[0].x" ng-src={{pc.petsService.currentPet.photos[0].x}} />
       <img id="mainPhoto" ng-if="!pc.petsService.currentPet.photos[0].x" src="assets/images/cat-silhouette.png" />
     </div>
@@ -10,49 +13,58 @@
   <div id="pawPrints" class="row">
     <div class="mx-auto" id="redPaw">
       <div class="col">
-        <img ng-click="pc.hidePet(pc.petsService.currentPet.data.id)" alt="pass" class="img-fluid flip-horizontal" src="assets/images/red-paw.png" />
+        <img ng-click="pc.hidePet(pc.petsService.currentPet.data.id); showMe = false" alt="pass" class="img-fluid flip-horizontal"
+          src="assets/images/red-paw.png" />
       </div>
     </div>
     <div class="mx-auto" id="greenPaw">
       <div class="col">
-        <img ng-click="pc.lovePet(pc.petsService.currentPet.data.id)" alt="save" class="img-fluid flip-horizontal" src="assets/images/green-paw.png" />
+        <img ng-click="pc.lovePet(pc.petsService.currentPet.data.id, pc.petsService.currentPet.data.name); showMe = true" alt="save"
+          class="img-fluid flip-horizontal" src="assets/images/green-paw.png" />
       </div>
     </div>
   </div>
-  <div id="description" class="hide" ng-show="PetService.showMore">
-    <h3>Description</h3>
-    <p ng-if="pc.petsService.currentPet.data.description">
-      {{pc.petsService.currentPet.data.description}}
-    </p>
-    <p ng-if="!pc.petsService.currentPet.data.description">
-      Sorry! I only have my adorable photo right now. If you want to learn more about me, all you have to do is
-      <a href="#contact">contact</a> the shelter I come from and ask!
-    </p>
-    <div>
-      <div id="otherInfo">
-        <h3>Other information</h3>
-        <span ng-if="pc.petsService.currentPet.data.breeds">
-          <h4>Breed(s):</h4>
-          <ul ng-repeat="breed in pc.petsService.currentPet.data.breeds">
-            <li>{{breed}}</li>
-          </ul>
-        </span>
-        <h4>Age:</h4>
-        {{pc.petsService.currentPet.data.age}}
-        <h4>Sex:</h4>
-        {{pc.petsService.currentPet.data.sex}}
-        <h4>Size:</h4>
-        {{pc.petsService.currentPet.data.size}}
+  <div>
+    <div id="description" class="hide information" ng-show="PetService.showMore">
+      <h3>Description</h3>
+      <p ng-if="pc.petsService.currentPet.data.description">
+        {{pc.petsService.currentPet.data.description}}
+      </p>
+      <p ng-if="!pc.petsService.currentPet.data.description">
+        Sorry! I only have my adorable photo right now. If you want to learn more about me, all you have to do is
+        <a href="#contact">contact</a> the shelter I come from and ask!
+      </p>
+      <div>
+        <div id="otherInfo" class="information">
+          <h4>Other information</h4>
+          <span ng-if="pc.petsService.currentPet.data.breeds">
+            <div class="row">
+              <h5 class="col-4">Breed(s):</h5>
+              <span class="col" ng-repeat="breed in pc.petsService.currentPet.data.breeds">
+                {{breed}}
+              </span>
+            </div>
+          </span>
+          <div class="row">
+            <h5>Age:  </h5> {{pc.petsService.currentPet.data.age}}
+          </div>
+          <div class="row">
+            <h5>Sex:  </h5> {{pc.petsService.currentPet.data.sex}}
+          </div>
+          <div class="row">
+            <h5>Size:  </h5> {{pc.petsService.currentPet.data.size}}
+          </div>
+        </div>
       </div>
-    </div>
 
-    <a href="#contact" class="btn btn-primary">Contact Shelter</a>
+      <a href="#contact" class="btn btn-primary btn-info col-6">Contact Shelter</a>
+    </div>
   </div>
 
   <!-- {{pc.petsService.currentPet.data}} -->
   <!-- mailto:{{pc.petsService.currentPet.data.contact.email}} -->
 </div>
 <div class="container container-fluid row" ng-if="!pc.petsService.currentPet.data.description">
-    <i class="fa fa-spinner fa-pulse fa-3x fa-fw mx-auto col"></i>
-    <span class="sr-only">Loading...</span>
+  <i class="fa fa-spinner fa-pulse fa-3x fa-fw mx-auto col"></i>
+  <span class="sr-only">Loading...</span>
 </div>

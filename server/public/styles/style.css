@@ -17,10 +17,16 @@
   color: #F5EFED;
 }
 
-.icon-hover:hover{
-    transition: opacity 1s, transform 1s;
+.fa-cog.icon-hover:hover{
+    transition: opacity 0.5s, transform 0.5s;
     transform: rotate(-30deg) ;
 }
+
+.pet-fav.icon-hover:hover{
+  transition: color 1s ease;
+  color: rgb(233, 20, 126);
+}
+
 #redPaw img{
   max-height: 100px;
   padding: 5px;
@@ -56,6 +62,15 @@ main{
 h1{
   font-family: "Sniglet Regular", sans-serif;
   font-weight: bolder;
+}
+
+h2{
+  font-family: "Sniglet Regular", sans-serif;
+  font-weight: bold;
+}
+
+h3, h4{
+  font-family: "Sniglet Regular", sans-serif;
 }
 
 
@@ -166,8 +181,29 @@ li a:hover {
   background-color: rgba(255, 255, 255, .6);
   padding: 15px;
 }
-#mainPhoto{
-  margin-top: 30px;
+
+
+/* HOME */
+
+.toaster{
+  margin: 5px;
+  padding-left: 10px; 
+  background-color: rgba(76, 173, 79, .1);
 }
 
+.toaster a {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
 
+#mainPhoto{
+  margin: 10px;
+}
+
+.information{
+  display: block;
+  margin: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, .6);
+}
