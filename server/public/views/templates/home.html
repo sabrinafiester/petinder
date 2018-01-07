@@ -1,8 +1,8 @@
 <div class="container container-fluid card">
   <div class="row ">
     <div class="mx-auto text-center">
-      <!--<img id="mainPhoto" ng-src={{pc.petsService.currentPet.photos[0].x}} ng-click="PetService.showMore = !PetService.showMore;" ;/>-->
-      <h2 id="name" class="lead">{{pc.petsService.pets[pc.petsService.count].name}}</h2>
+      <img id="mainPhoto" ng-src={{pc.petsService.currentPet.photos[0].x}} ng-click="PetService.showMore = !PetService.showMore;" ;/>
+      <h2 id="name" class="lead">{{pc.petsService.currentPet.data.name}}</h2>
 
     </div>
   </div>
@@ -14,18 +14,14 @@
     </div>
     <div class="mx-auto" id="greenPaw">
       <div class="col">
-        <!--Increment counter to go to next pet using two way binding-->
-        <button ng-click="pc.petsService.count = pc.petsService.count+1" >
-          Next
-        </button>
-          <img ng-click="pc.lovePet(pc.petsService.pets[pc.petsService.count].id)" class="img-fluid flip-horizontal" src="assets/images/green-paw.png" />
+          <img ng-click="pc.lovePet(pc.petsService.currentPet.data.id)" class="img-fluid flip-horizontal" src="assets/images/green-paw.png" />
       </div>
     </div>
   </div>
   <div id="description" class="hide" ng-show="PetService.showMore">
     <h3>Description:</h3>
     <p>
-      {{pc.petsService.currentPet.data.description}}
+      {{pc.petsService.currentPet.description}}
     </p>
     <div>
       <h3>Stats:</h3>

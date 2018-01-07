@@ -3,14 +3,16 @@ myApp.controller('PetsController', function (UserService, PetsService) {
     var self = this;
     self.userService = UserService;
     self.petsService = PetsService;
-    self.pets = PetsService.getPets();
-
+    self.pets = PetsService.pets;
+    // self.currentPet = self.pets[self.petsService.count];
     console.log('PetsController loaded');
 
     self.getNextPet = function () {
         //need this line i think
         // self.currentPet = PetsService.getPets();
         self.petsService.count = self.petsService.count+1;
+        self.petsService.currentPet.data = self.petsService.pets[self.petsService.count];
+        self.petsService.currentPet.photos = Object.values(self.petsService.pets[self.petsService.count].media.photos);
     };
 
     self.lovePet = function (petId) {
