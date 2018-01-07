@@ -51,14 +51,15 @@ myApp.service('PetsService', ['$http', function ($http) {
         console.log('show more?', self.showMore)
     }
 
-
-    self.saveThisPet = function (pet, love) {
-        // console.log('saved pet is', pet);
+    self.saveThisPet = function (pet, name, love) {
+        console.log('saved pet is', name);
         //console.log('status is ', love)
         var petToSave = {
             petId: pet,
+            name: name,
             love: love
         }
+        self.userPetList.push(petToSave);
         $http.post('/pets', petToSave).then(function (response) {
             // console.log('response is', response)
         }).then(function () {
