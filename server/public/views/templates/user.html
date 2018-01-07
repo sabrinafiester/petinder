@@ -1,6 +1,44 @@
-<div ng-include="'views/partials/nav.html'"></div>
+<!-- <div ng-include="'views/partials/nav.html'"></div> -->
 <div class="container">
 
-    <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
+    <h1 id="welcome" class="lead">Welcome!</h1>
     <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
-</div>
+
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <div class="col-12" style="margin: 0 auto;">
+            <div class="thumbnail">
+                <img style="width:50%;" src="https://images.unsplash.com/photo-1506004896010-edbb40609353?auto=format&fit=crop&w=634&q=80">
+                <div class="caption-full">
+                    <p>David Johnson</p>
+                    <p>Cat lover, owner of 2 cats</p>
+                    <p>Minneapolis, MN</p>
+                    <p>I love cats!! I love cats!! I love cats!! I love cats!! I love cats!! </p>
+                </div>
+            </div>
+            <hr>
+            <p></p>
+
+            <div class="container user-container">
+                <form>
+                        <h4>Change Settings</h4>
+                </form>
+                <label>Username</label>
+                <input type="text" placeholder="Enter New Username" value="">
+                <br>
+                <label>Password</label>
+                <input type="password" placeholder="Enter New Password" value="">
+                <br>
+                <label class="radio">
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Dogs
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Cats
+                </label>
+                <br>
+                <label>Zip Code</label>
+                <input type="number" placeholder="Enter New Zip Code" value="">
+                <br>
+                <button type="cancel" class="btn">Cancel</button>
+                <button type="submit" class="btn">Submit</button>
+            </div>
+
+        </div>
+    </div>
