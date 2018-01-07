@@ -4,6 +4,7 @@ myApp.controller('PetsController', function (UserService, PetsService) {
     self.userService = UserService;
     self.petsService = PetsService;
     self.currentPet = PetsService.currentPet;
+    self.showMore = PetsService.showMore;
 
     console.log('PetsController loaded');
 
@@ -22,7 +23,13 @@ myApp.controller('PetsController', function (UserService, PetsService) {
         self.getNextPet();
     }
 
+    self.showMore = function() {
+        self.showPetData = true;
+    }
 
+    self.hideMore = function() {
+        self.showPetData = false;
+    }
 
     self.getNextPet();
 
