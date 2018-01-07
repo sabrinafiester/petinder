@@ -9,10 +9,10 @@ myApp.service('PetsService', ['$http', function ($http) {
     self.count = 0;
     self.userPetList = [];
 
-    self.getPets = function () {
-        console.log('pets service - getPets()')
-       
-        $http.get('/petfinder/getPetsByZip/55113/cat').then(function (response) {
+    self.getPets = function (species) {
+        console.log('pets service - getPets()', species)
+        species = "cat";
+        $http.get('/petfinder/getPetsByZip/55113/' + species).then(function (response) {
             //  console.log('response.data is', response);
             //   console.log('type of response.data is', typeof response.data);
             console.log(response.data[0]);
@@ -76,7 +76,7 @@ myApp.service('PetsService', ['$http', function ($http) {
         })
     }
 
-    self.getPets();
+  //  self.getPets();
     self.getUserPetList();
 
 

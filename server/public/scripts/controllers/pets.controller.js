@@ -6,6 +6,7 @@ myApp.controller('PetsController', function (UserService, PetsService) {
     self.pets = PetsService.pets;
     // self.currentPet = self.pets[self.petsService.count];
     console.log('PetsController loaded');
+    console.log('user info is', self.userService.userObject)
 
     self.getNextPet = function () {
         //need this line i think
@@ -46,5 +47,5 @@ myApp.controller('PetsController', function (UserService, PetsService) {
         self.showPetData = false;
     }
 
-
+    PetsService.getPets(self.userService.userObject)
 });
