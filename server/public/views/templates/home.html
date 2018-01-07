@@ -1,47 +1,46 @@
 <div class="container container-fluid">
-    <div class="row ">
-        <div class="mx-auto text-center">
-            <a href="/info.html">
-                <img id="mainPhoto" src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/40578214/1/?bust=1515048857&width=300" />
-            </a>
-            <h2 id="name" class="lead">Gus</h2>
+  <div class="row ">
+    <div class="mx-auto text-center">
+      <img id="mainPhoto" ng-src={{pc.petsService.currentPet.photos[0].x}} ng-click="PetService.showMore = !PetService.showMore;" ;/>
+      <h2 id="name" class="lead">{{pc.petsService.currentPet.data.name}}</h2>
 
-        </div>
     </div>
-    <div id="pawPrints" class="row">
-        <div class="mx-auto" id="redPaw">
-            <div class="col">
-                <a href="#">
-                    <img class="img-fluid flip-horizontal" src="assets/images/red-paw.png" />
-                </a>
-            </div>
-        </div>
-        <div class="mx-auto" id="greenPaw">
-            <div class="col">
-                <a href="#">
-                    <img class="img-fluid flip-horizontal" src="assets/images/green-paw.png" />
-                </a>
-            </div>
-        </div>
+  </div>
+  <div id="pawPrints" class="row">
+    <div class="mx-auto" id="redPaw">
+      <div class="col">
+          <img ng-click="pc.getNextPet()" class="img-fluid flip-horizontal" src="assets/images/red-paw.png" />
+      </div>
     </div>
-    <div id="description" class="hide">
-      <h3>Description:</h3>
-      <p>Vommit food and eat it again then cats take over the world, yet meow meow, i tell my human pushes butt to face or meow meow, i tell my human loves cheeseburgers meow. Jump on human and sleep on her all night long be long in the bed, purr in the morning and then give a bite to every human around for not waking up request food, purr loud scratch the walls, the floor, the windows, the humans try to hold own back foot to clean it but foot reflexively kicks you in face, go into a rage and bite own foot, hard. Meowing non stop for food hunt by meowing loudly at 5am next to human slave food dispenser for chase imaginary bugs, or meow all night having their mate disturbing sleeping humans.</p>
-      <a href="#" class="btn btn-primary">Contact</a>
+    <div class="mx-auto" id="greenPaw">
+      <div class="col">
+          <img ng-click="pc.lovePet(pc.petsService.currentPet)" class="img-fluid flip-horizontal" src="assets/images/green-paw.png" />
+      </div>
     </div>
-    <!-- <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
-    <form ng-submit="lc.login()">
-      <div>
-          <label for="username">Username:</label>
-          <input type="text" ng-model="lc.user.username" />
-      </div>
-      <div>
-          <label for="password">Password:</label>
-          <input type="password" ng-model="lc.user.password" />
-      </div>
-      <div>
-          <input class="btn btn-default" type="submit" name="submit" value="Log In" />
-          <a href="#register">Register</a>
-      </div>
-    </form> -->
+  </div>
+  <div id="description" class="hide" ng-show="PetService.showMore">
+    <h3>Description:</h3>
+    <p>
+      {{pc.petsService.currentPet.data.description}}
+    </p>
+    <div>
+      <h3>Stats:</h3>
+      <h4>Breeds:</h4>
+      <ul ng-repeat="breed in pc.petsService.currentPet.data.breeds">
+        <li>{{breed}}</li>
+      </ul>
+      <h4>Age:</h4>
+      {{pc.petsService.currentPet.data.age}}
+      <h4>Sex:</h4>
+      {{pc.petsService.currentPet.data.sex}}
+      <h4>Size:</h4>
+      {{pc.petsService.currentPet.data.size}}
+    </div>
+
+    <a ng-href="mailto:{{pc.petsService.currentPet.data.contact.email}}" class="btn btn-primary">Contact Shelter</a>
+  </div>
+
+  <!-- {{pc.petsService.currentPet.data}} -->
+
+
 </div>
