@@ -1,26 +1,26 @@
 <div class="container container-fluid card" ng-if="pc.petsService.currentPet.data.description">
-  <span class="toaster" ng-show="showMe">
-    <p>
-      <a ng-click="showMe = false" href="">X</a> Added a pet to your saved pets!</p>
-  </span>
+  <span class="alert alert-success" ng-show="showMe">
+    <p>Added a pet to your saved pets!   <a ng-click="showMe = false" href="" class="close"><i class="fa fa-times"></i></a></p>
+    <p><a href="#futureFriends"><small>View Your Future Friends   <i class="fa fa-chevron-right"></i></small></a></p>
+</span>
   <div class="row">
-    <div class="mx-auto text-center" ng-click="PetService.showMore = !PetService.showMore;">
+    <div class="mx-auto text-center img-fluid" ng-click="PetService.showMore = !PetService.showMore;">
       <h2 id="name">{{pc.petsService.currentPet.data.name}}</h2>
-      <img id="mainPhoto" ng-if="pc.petsService.currentPet.photos[0].x" ng-src={{pc.petsService.currentPet.photos[0].x}} />
-      <img id="mainPhoto" ng-if="!pc.petsService.currentPet.photos[0].x" src="assets/images/cat-silhouette.png" />
+      <img class="img-fluid" id="mainPhoto" ng-if="pc.petsService.currentPet.photos[0].x" ng-src={{pc.petsService.currentPet.photos[0].x}} />
+      <img class="img-fluid" id="mainPhoto" ng-if="!pc.petsService.currentPet.photos[0].x" src="assets/images/cat-silhouette.png" />
     </div>
   </div>
   <div id="pawPrints" class="row">
     <div class="mx-auto" id="redPaw">
       <div class="col">
-        <img ng-click="pc.hidePet(pc.petsService.currentPet.data.id); showMe = false" alt="pass" class="img-fluid flip-horizontal"
+        <img ng-click="pc.hidePet(pc.petsService.currentPet.data.id); showMe = false" alt="pass" class="img-fluid"
           src="assets/images/red-paw.png" />
       </div>
     </div>
     <div class="mx-auto" id="greenPaw">
       <div class="col">
         <img ng-click="pc.lovePet(pc.petsService.currentPet.data.id, pc.petsService.currentPet.data.name); showMe = true" alt="save"
-          class="img-fluid flip-horizontal" src="assets/images/green-paw.png" />
+          class="img-fluid" src="assets/images/green-paw.png" />
       </div>
     </div>
   </div>
