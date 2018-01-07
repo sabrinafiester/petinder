@@ -33,10 +33,9 @@ myApp.controller('PetsController', function (UserService, PetsService) {
         self.getNextPet();
     };
 
-
-
-
-
+    self.successMessage = function () {
+        console.log('put success toaster here');
+    }
 
     self.showMore = function () {
         self.showPetData = true;

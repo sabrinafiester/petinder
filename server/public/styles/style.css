@@ -9,7 +9,7 @@
     font-family: Sniglet Regular;
     src: url("../assets/fonts/Sniglet-Regular.otf");
 }
-.pet-nav .fa-cog{
+.pet-nav .fa-cog, .pet-fav{
   top: 0;
   left: 0;
   display: block;
@@ -23,9 +23,11 @@
 }
 #redPaw img{
   max-height: 100px;
+  padding: 5px;
 }
 #greenPaw img{
   max-height: 100px;
+  padding: 5px;
 }
 .flip-horizontal { -webkit-transform: matrix(-1, 0, 0, 1, 0, 0) }
 
