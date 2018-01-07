@@ -33,13 +33,13 @@ router.get('/getPet/:id', function(req, res) {
 });
 
 router.get('/getPetsByZip/:zip', function(req, res) {
-    petfinder.findPet(req.params.id, {'count': 100}, function(error, pets) {
+    petfinder.findPet(req.params.zip, {'count': 100}, function(error, pets) {
         res.json(pets)
     });
 });
 
 router.get('/getPetsByZip/:zip/:type', function(req, res) {
-    petfinder.findPet(req.params.id, {'count': 100, 'animal': req.params.type}, function(error, pets) {
+    petfinder.findPet(req.params.zip, {'count': 100, 'animal': req.params.type}, function(error, pets) {
         res.json(pets)
     });
 });
