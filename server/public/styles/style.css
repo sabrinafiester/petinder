@@ -218,3 +218,12 @@ a .fa-times{
   padding: 3px;
   margin: 2px;
 }
+
+.alert-success a:hover{
+  color: #155724;
+  text-transform: none;
+}
+.alert-success a{
+  color: #155724;
+  text-transform: none;
+}
