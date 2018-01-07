@@ -2,9 +2,18 @@ myApp.factory('UserService', function($http, $location){
   console.log('UserService Loaded');
 
   var userObject = {};
+  
 
   return {
     userObject : userObject,
+
+    setPrefs : function(userObj){
+      console.log('in user service, set prefs: userObject is', userObj)
+      $http.put('/user/prefs', userObj).then(function(response) {
+        console.log(response);
+        //need to refresh data after success
+      });
+    },
 
     getuser : function(){
       console.log('UserService -- getuser');
