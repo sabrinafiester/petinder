@@ -1,4 +1,4 @@
-<div class="container container-fluid">
+<div class="container container-fluid card">
   <div class="row ">
     <div class="mx-auto text-center">
       <img id="mainPhoto" ng-src={{pc.petsService.currentPet.photos[0].x}} ng-click="PetService.showMore = !PetService.showMore;" ;/>
@@ -36,9 +36,10 @@
       <h4>Size:</h4>
       {{pc.petsService.currentPet.data.size}}
     </div>
-
-    <a ng-href="mailto:{{pc.petsService.currentPet.data.contact.email}}" class="btn btn-primary">Contact Shelter</a>
-  </div>
+    <hr>
+     <a ng-href="mailto:{{pc.petsService.currentPet.data.contact.email}}" class="btn btn-lg btn-primary"><i class="fa fa-envelope"></i> Contact Shelter</a>
+    </div>
+    <hr>
 
   <!-- {{pc.petsService.currentPet.data}} -->
 
