@@ -1,5 +1,6 @@
 <div class="container container-fluid card" ng-if="pc.petsService.currentPet.data.description">
-  <div class="row ">
+  <div class="row">
+    <!-- <p>Added {{pc.petsService.currentPet.data.name}} to your saved pets!</p> -->
     <div class="mx-auto text-center" ng-click="PetService.showMore = !PetService.showMore;">
       <h2 id="name" class="lead">{{pc.petsService.currentPet.data.name}}</h2>
       <img id="mainPhoto" ng-if="pc.petsService.currentPet.photos[0].x" ng-src={{pc.petsService.currentPet.photos[0].x}} />
@@ -9,14 +10,12 @@
   <div id="pawPrints" class="row">
     <div class="mx-auto" id="redPaw">
       <div class="col">
-        <img ng-click="pc.hidePet(pc.petsService.currentPet.data.id)" class="img-fluid flip-horizontal" src="assets/images/red-paw.png"
-        />
+        <img ng-click="pc.hidePet(pc.petsService.currentPet.data.id)" alt="pass" class="img-fluid flip-horizontal" src="assets/images/red-paw.png" />
       </div>
     </div>
     <div class="mx-auto" id="greenPaw">
       <div class="col">
-        <img ng-click="pc.lovePet(pc.petsService.currentPet.data.id)" class="img-fluid flip-horizontal" src="assets/images/green-paw.png"
-        />
+        <img ng-click="pc.lovePet(pc.petsService.currentPet.data.id)" alt="save" class="img-fluid flip-horizontal" src="assets/images/green-paw.png" />
       </div>
     </div>
   </div>
