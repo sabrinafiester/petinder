@@ -209,3 +209,12 @@ a .fa-times{
   padding: 15px;
   background-color: rgba(255, 255, 255, .6);
 }
+
+.gallery-image{
+  cursor: pointer;
+}
+
+.future-cards .card{
+  padding: 3px;
+  margin: 2px;
+}
