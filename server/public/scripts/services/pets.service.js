@@ -31,8 +31,9 @@ myApp.service('PetsService', ['$http', function ($http) {
     }
 
 
-    self.saveThisPet = function (pet) {
-        console.log('saved pet is', pet)
+    self.saveThisPet = function (pet, love) {
+        console.log('saved pet is', pet);
+        console.log('status is ', love)
         // $http.post('/pets', pet).then(function (response) {
         //     console.log('response is', response)
         // });

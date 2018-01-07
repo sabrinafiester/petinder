@@ -9,7 +9,7 @@
   <div id="pawPrints" class="row">
     <div class="mx-auto" id="redPaw">
       <div class="col">
-          <img ng-click="pc.getNextPet()" class="img-fluid flip-horizontal" src="assets/images/red-paw.png" />
+          <img ng-click="pc.hidePet(pc.petsService.currentPet.data.id)" class="img-fluid flip-horizontal" src="assets/images/red-paw.png" />
       </div>
     </div>
     <div class="mx-auto" id="greenPaw">
