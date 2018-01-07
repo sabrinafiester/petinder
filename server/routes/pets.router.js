@@ -57,10 +57,11 @@ router.get('/', function (req, res) {
                 res.sendStatus(500);
             } else {
                 // when connecting to database worked!
-                client.query('SELECT * FROM petlist WHERE user_id = $1 && love = true;', [req.user.id], function (errorMakingQuery, result) {
+                client.query('SELECT * FROM petlist WHERE user_id = $1 AND love = true;', [req.user.id], function (errorMakingQuery, result) {
                     done();
                     if (errorMakingQuery) {
                         console.log('Error making database query', errorMakingQuery);
+                        console.log(req.user.id);
                         res.sendStatus(500);
                     } else {
                         console.log(result.rows);
@@ -98,7 +99,7 @@ router.post('/', function (req, res) {
                 res.sendStatus(500);
             } else {
                 // when connecting to database worked!
-                client.query('INSERT INTO petlist (user_id, petfinder_id, love) VALUES ($1, $2, $3);', [req.user.id, petId, req.body.love], function (errorMakingQuery, result) {
+                client.query('INSERT INTO petlist (user_id, petfinder_id, love, name, image, description) VALUES ($1, $2, $3, $4, $5, $6);', [req.user.id, petId, req.body.love, req.body.name, req.body.image, req.body.description], function (errorMakingQuery, result) {
                     done();
                     if (errorMakingQuery) {
                         console.log('Error making database query', errorMakingQuery);

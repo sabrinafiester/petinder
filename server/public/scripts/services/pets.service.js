@@ -1,4 +1,5 @@
 myApp.service('PetsService', ['$http', function ($http) {
+    console.log('pet service loaded');
     var self = this;
     self.pets = {};
     self.currentPet = {
@@ -8,6 +9,8 @@ myApp.service('PetsService', ['$http', function ($http) {
     self.showMore = false;
     self.count = 0;
     self.userPetList = [];
+
+    self.futureFriends = {};
 
     self.getPets = function () {
         console.log('pets service - getPets()')
@@ -51,13 +54,16 @@ myApp.service('PetsService', ['$http', function ($http) {
         console.log('show more?', self.showMore)
     }
 
-    self.saveThisPet = function (pet, name, love) {
+    self.saveThisPet = function (pet, name, love, description, image) {
         console.log('saved pet is', name);
         //console.log('status is ', love)
         var petToSave = {
             petId: pet,
             name: name,
-            love: love
+            love: love,
+            image: image,
+            description: description
+
         }
         self.userPetList.push(petToSave);
         $http.post('/pets', petToSave).then(function (response) {
@@ -75,8 +81,17 @@ myApp.service('PetsService', ['$http', function ($http) {
         })
     }
 
+    self.getFutureFriends = function () {
+        console.log('get future friends');
+        $http.get('/pets').then(function(response) {
+            console.log('saved pets list: ', response.data);
+            self.futureFriends = response.data;
+            console.log('future friends: ', self.futureFriends);
+        })
+    }
+
     self.getPets();
     self.getUserPetList();
-
+    self.getFutureFriends();
 
 }]);

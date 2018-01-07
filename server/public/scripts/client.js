@@ -35,7 +35,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     })
     .when('/futureFriends', {
       templateUrl: '/views/templates/futureFriends.html',
-      controller: 'PetDetailsController',
+      controller: 'PetsController as pc',
       // UNCOMMENT TO RE-ENABLE AUTHENTICATION
       // resolve: {
       //   getuser : function(UserService){
