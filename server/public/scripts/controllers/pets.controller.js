@@ -3,23 +3,24 @@ myApp.controller('PetsController', function (UserService, PetsService) {
     var self = this;
     self.userService = UserService;
     self.petsService = PetsService;
-    self.currentPet = PetsService.currentPet;
+    self.pets = PetsService.getPets();
 
     console.log('PetsController loaded');
 
     self.getNextPet = function () {
-        self.currentPet = PetsService.getPets();
+        //need this line i think
+        // self.currentPet = PetsService.getPets();
+        self.petsService.count = self.petsService.count+1;
     };
 
-    self.lovePet = function (pet) {
+    self.lovePet = function (petId) {
+        PetsService.saveThisPet(petId);
         //saves pet info when like is clicked
         console.log('save button clicked');
-        console.log('pet loved is', pet)
+        console.log('pet loved is', petId);
         //sends object to service to send to post route to db 
-        PetsService.saveThisPet(pet);
         self.getNextPet();
-    }
-
+    };
 
     self.showMore = function () {
         self.showPetData = true;
@@ -29,6 +30,5 @@ myApp.controller('PetsController', function (UserService, PetsService) {
         self.showPetData = false;
     }
 
-    self.getNextPet();
 
 });
