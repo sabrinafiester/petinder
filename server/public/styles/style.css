@@ -216,9 +216,11 @@ a .fa-times{
 }
 
 .future-cards .card{
+  min-height: 230px;
   padding: 3px;
   margin: 2px;
 }
+
 
 .alert-success a:hover{
   color: #155724;
