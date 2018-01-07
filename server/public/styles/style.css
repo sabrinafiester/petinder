@@ -51,7 +51,8 @@ main{
 }
 
 h1{
-  font-family: "Sniglet", sans-serif;
+  font-family: "Sniglet Regular", sans-serif;
+  font-weight: bolder;
 }
 
 
