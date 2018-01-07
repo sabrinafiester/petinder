@@ -4,11 +4,11 @@
 /*FONTS AND ICONS AND MISC STYLES*/
 @font-face {
     font-family: Sniglet;
-    src: url("assets/fonts/Sniglet-ExtraBold.otf") format("opentype");
+    src: url("../assets/fonts/Sniglet-ExtraBold.otf");
 }
 @font-face {
     font-family: Sniglet Regular;
-    src: url("assets/fonts/Sniglet-Regular.otf") format("opentype");
+    src: url("../assets/fonts/Sniglet-Regular.otf");
 }
 .pet-nav .fa-cog{
   top: 0;
@@ -31,6 +31,7 @@
 
 /*BASIC ELEMENTS*/
 body, html {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -50,7 +51,8 @@ main{
 }
 
 h1{
-  font-family: "Sniglet", sans-serif;
+  font-family: "Sniglet Regular", sans-serif;
+  font-weight: bolder;
 }
 
 
@@ -86,6 +88,9 @@ h1{
   background-color: #4CAF50;
   color: white;
 }
+
+/*LOGIN*/
+
 
 #entryForm {
   margin-top: 14px;
