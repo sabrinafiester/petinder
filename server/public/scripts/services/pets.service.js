@@ -15,10 +15,15 @@ myApp.service('PetsService', ['$http', function ($http) {
             // console.log('photo url is',  self.currentPet.data.media.photos)
             self.currentPet.photos = Object.values(response.data.media.photos);
             console.log('in service, current pet is', self.currentPet)
-
+            
             return self.currentPet;
 
         })
+    }
+
+    self.toggleDetails = function () {
+        self.showMore = !self.showMore;
+        console.log('show more?', self.showMore)
     }
 
 }]);

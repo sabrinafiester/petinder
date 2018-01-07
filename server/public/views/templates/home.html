@@ -9,16 +9,12 @@
   <div id="pawPrints" class="row">
     <div class="mx-auto" id="redPaw">
       <div class="col">
-        <a href="#">
-          <img class="img-fluid flip-horizontal" src="assets/images/red-paw.png" />
-        </a>
+          <img ng-click="pc.getNextPet()" class="img-fluid flip-horizontal" src="assets/images/red-paw.png" />
       </div>
     </div>
     <div class="mx-auto" id="greenPaw">
       <div class="col">
-        <a href="#">
-          <img class="img-fluid flip-horizontal" src="assets/images/green-paw.png" />
-        </a>
+          <img ng-click="pc.lovePet(pc.petsService.currentPet)" class="img-fluid flip-horizontal" src="assets/images/green-paw.png" />
       </div>
     </div>
   </div>

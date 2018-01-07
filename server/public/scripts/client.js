@@ -33,6 +33,16 @@ myApp.config(function($routeProvider, $locationProvider) {
       //   }
       // }
     })
+    .when('/futureFriends', {
+      templateUrl: '/views/templates/petDetails.html',
+      controller: 'PetDetailsController',
+      // UNCOMMENT TO RE-ENABLE AUTHENTICATION
+      // resolve: {
+      //   getuser : function(UserService){
+      //     return UserService.getuser();
+      //   }
+      // }
+    })
     .when('/login', {
       templateUrl: '/views/templates/login.html',
       controller: 'LoginController as lc'
