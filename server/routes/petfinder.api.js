@@ -14,12 +14,6 @@ router.get('/getDogBreeds', function(req, res) {
     });
 });
 
-router.get('/getRandomPet', function(req, res) {
-    petfinder.getRandomPet([], function(err, pet) {
-        res.json(pet)
-    });
-});
-
 router.get('/getRandomDog', function(req, res) {
     petfinder.getRandomPet({'animal': 'dog'}, function(err, pet) {
         res.json(pet)
@@ -33,8 +27,31 @@ router.get('/getRandomCat', function(req, res) {
 });
 
 router.get('/getPet/:id', function(req, res) {
-    petfinder.getPet(req.params.id, [], function(err, breeds) {
-        res.json(breeds)
+    petfinder.getPet(req.params.id, [], function(err, pet) {
+        res.json(pet)
+    });
+});
+
+router.get('/getPetsByZip/:zip', function(req, res) {
+    petfinder.findPet(req.params.id, {'count': 100}, function(error, pets) {
+        res.json(pets)
+    });
+});
+
+router.get('/getPetsByZip/:zip/:type', function(req, res) {
+    petfinder.findPet(req.params.id, {'count': 100, 'animal': req.params.type}, function(error, pets) {
+        res.json(pets)
+    });
+});
+
+router.get('/isAvailable/:id', function(req, res) {
+    petfinder.getPet(req.params.id, [], function(error, pet) {
+        if (pet.hasOwnProperty('status') && pet.status === "X") {
+            res.json(false);
+        }
+        else {
+            res.json(pet);
+        }
     });
 });
 
