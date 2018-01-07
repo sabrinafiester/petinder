@@ -24,7 +24,15 @@ router.post('/', function(req, res, next) {
     password: encryptLib.encryptPassword(req.body.password)
 
   };
-  console.log('new user:', saveUser);
+    var saveIdeal = {
+        size: req.body.size,
+        sex: req.body.sex,
+        // age: req.body.age,
+        user: req.body.username
+    };
+
+
+        console.log('new user:', saveUser);
 
   pool.connect(function(err, client, done) {
     if(err) {
@@ -43,6 +51,18 @@ router.post('/', function(req, res, next) {
             res.sendStatus(201);
           }
         });
+      client.query("INSERT INTO ideal_cats (size, sex, user) VALUES ($1, $2, $3)",
+          [saveIdeal.size, saveIdeal.sex, saveIdeal.user],
+          function (err, result) {
+              client.end();
+
+              if(err) {
+                  console.log("Error inserting data: ", err);
+                  res.sendStatus(500);
+              } else {
+                  res.sendStatus(201);
+              }
+          });
   });
 
 });
