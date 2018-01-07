@@ -1,15 +1,33 @@
-<div class="container">
-  <h1 class="lead">Register User</h1>
+<div class="container col-xs-10 col-xs-offset-1 col-sm-3">
+  <h1>Pawsibilities</h1>
+  <h2 class="lead">Register User</h1>
   <h1 class="lead alert alert-danger" role="alert" ng-if="lc.message != ''">{{lc.message}}</h2>
   <form ng-submit="lc.registerUser()">
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" ng-model="lc.user.username" />
+    <div class="input-group mb-3">
+        <input type="text" ng-model="lc.register.firstName" class="form-control" placeholder="First Name" aria-label="firstName" aria-describedby="basic-addon1">
     </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" ng-model="lc.user.password" />
+    <div class="input-group mb-3">
+        <input type="text" ng-model="lc.register.lastName" class="form-control" placeholder="Last Name" aria-label="Last Name" aria-describedby="basic-addon1">
     </div>
+    <div class="input-group mb-3">
+        <input type="email" ng-model="lc.register.email" class="form-control" placeholder="E-mail" aria-label="email" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" ng-model="lc.register.zipCode" class="form-control" placeholder="Zip Code" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" ng-model="lc.register.username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" ng-model="lc.user.password" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+    <!-- <div class="input-group mb-3">
+        <label for="dogsCheckbox">Dogs:</label>
+        <input type="checkbox" id="dogsCheckbox" value="1">
+        <br>
+        <label for="catsCheckbox">Cats:</label>
+        <input type="checkbox" id="catsCheckbox" value="2">
+      </div> -->
     <input class="btn btn-default" type="submit" name="submit" value="Register" />
     <a href="#home">Cancel</a>
   </form>
