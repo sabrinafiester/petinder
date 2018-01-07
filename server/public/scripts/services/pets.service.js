@@ -15,7 +15,7 @@ myApp.service('PetsService', ['$http', function ($http) {
             // console.log('photo url is',  self.currentPet.data.media.photos)
             self.currentPet.photos = Object.values(response.data.media.photos);
             console.log('in service, current pet is', self.currentPet)
-            
+
             return self.currentPet;
 
         })
@@ -26,4 +26,11 @@ myApp.service('PetsService', ['$http', function ($http) {
         console.log('show more?', self.showMore)
     }
 
+
+    self.saveThisPet = function (pet) {
+        console.log('saved pet is', pet)
+        $http.post('/pets', pet).then(function (response) {
+            console.log('response is', response)
+        });
+    }
 }]);

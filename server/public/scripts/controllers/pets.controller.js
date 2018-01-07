@@ -8,7 +8,6 @@ myApp.controller('PetsController', function (UserService, PetsService) {
     console.log('PetsController loaded');
 
     self.getNextPet = function () {
-
         self.currentPet = PetsService.getPets();
     };
 
@@ -17,15 +16,16 @@ myApp.controller('PetsController', function (UserService, PetsService) {
         console.log('save button clicked');
         console.log('pet loved is', pet)
         //sends object to service to send to post route to db 
+        PetsService.saveThisPet(pet);
         self.getNextPet();
     }
 
 
-    self.showMore = function() {
+    self.showMore = function () {
         self.showPetData = true;
     }
 
-    self.hideMore = function() {
+    self.hideMore = function () {
         self.showPetData = false;
     }
 
