@@ -16,22 +16,27 @@ myApp.controller('PetsController', function (UserService, PetsService) {
     };
 
     self.lovePet = function (petId) {
-        PetsService.saveThisPet(petId, 1);
+        PetsService.saveThisPet(petId, true);
         //saves pet info when like is clicked
-        console.log('save button clicked');
-        console.log('pet loved is', petId);
+       // console.log('save button clicked');
+      //  console.log('pet loved is', petId);
         //sends object to service to send to post route to db 
         self.getNextPet();
     };
 
     self.hidePet = function (petId) {
-        PetsService.saveThisPet(petId, 0);
+        PetsService.saveThisPet(petId, false);
         //saves pet info when like is clicked
-        console.log('hide button clicked');
-        console.log('pet not loved is', petId);
+     //   console.log('hide button clicked');
+      //  console.log('pet not loved is', petId);
         //sends object to service to send to post route to db
         self.getNextPet();
     };
+
+
+
+
+
 
     self.showMore = function () {
         self.showPetData = true;

@@ -39,40 +39,40 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function (req, res) {
+    console.log('pets post before auth')
     if (req.isAuthenticated()) {
-        //petId = req.body.petId;
+        console.log('req.body', req.body);
+        var love = req.body.love;
+        console.log('love is', love);
+        var petId = req.body.petId;
+   
         // send back user object from database
         console.log('logged in', req.user);
         console.log('/pets post hit');
-        console.log('pet to save is ', req.body)
         var userInfo = {
             username: req.user.username,
             id: req.user.id
         };
 
-        var petToSave = {
-
-        }
-        console.log('id is', userInfo.id)
-        // pool.connect(function (errorConnectingToDatabase, client, done) {
-        //     if (errorConnectingToDatabase) {
-        //         // when connecting to database failed
-        //         console.log('Error connecting to database', errorConnectingToDatabase);
-        //         res.sendStatus(500);
-        //     } else {
-        //         // when connecting to database worked!
-        //         client.query('INSERT INTO petlist (user_id, petfinder_id) VALUES $1, $2;', [userInfo.id, petId], function (errorMakingQuery, result) {
-        //             done();
-        //             if (errorMakingQuery) {
-        //                 console.log('Error making database query', errorMakingQuery);
-        //                 res.sendStatus(500);
-        //             } else {
-        //                 console.log(result.rows);
-        //                 res.send(result.rows);
-        //             }
-        //         });
-        //     }
-        // });
+        pool.connect(function (errorConnectingToDatabase, client, done) {
+            if (errorConnectingToDatabase) {
+                // when connecting to database failed
+                console.log('Error connecting to database', errorConnectingToDatabase);
+                res.sendStatus(500);
+            } else {
+                // when connecting to database worked!
+                client.query('INSERT INTO petlist (user_id, petfinder_id, love) VALUES ($1, $2, $3);', [req.user.id, petId, req.body.love], function (errorMakingQuery, result) {
+                    done();
+                    if (errorMakingQuery) {
+                        console.log('Error making database query', errorMakingQuery);
+                        res.sendStatus(500);
+                    } else {
+                        console.log(result.rows);
+                        res.send(result.rows);
+                    }
+                });
+            }
+        });
     } else {
         console.log('not logged in');
         res.sendStatus(403)
