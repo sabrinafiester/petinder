@@ -32,9 +32,24 @@
                     <br>
                     <label>Zip Code</label>
                     <input type="number" placeholder="Enter New Zip Code" value="">
-                    <br>
-                    <button type="cancel" class="btn">Cancel</button>
-                    <button type="submit" class="btn btn-default">Save</button>
+                    <div class="col-sm-4">
+                        <select ng-model="lc.register.size" class="form-control" placeholder="ideal pet size">
+                            <option value="s">Small</option>
+                             <option value="m">Medium</option>
+                             <option value="l">Large</option>
+                         </select>
+                    </div><br>
+                     <label>
+                        <input type="radio" ng-model="lc.register.sex" value="F">
+                         Female
+                     </label><br/>
+                     <label>
+                         <input type="radio" ng-model="lc.register.sex" ng-value="M">
+                       Male
+                      </label>
+                      <br>
+                      <button type="cancel" class="btn">Cancel</button>
+                      <button type="submit" class="btn btn-default">Save</button><br>
                 </form>
             </div>
             <button class="btn btn-default btn-info col-6" ng-click="uc.userService.logout()">Log Out</button>
