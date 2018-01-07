@@ -13,7 +13,7 @@ var petRouter = require('./routes/pets.router.js');
 
 var petFinderApi = require('./routes/petfinder.api.js');
 
-var port = process.env.PORT || 5000
+var port = process.env.PORT || 5000;
 
 // Body parser middleware
 app.use(bodyParser.json());
