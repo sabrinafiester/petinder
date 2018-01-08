@@ -30,6 +30,30 @@ myApp.factory('UserService', function($http, $location){
         console.log('UserService -- logout -- logged out');
         $location.path("/home");
       });
-    }
+    },
+      getIdeal : function() {
+        console.log('UserService -- save ideal');
+        $http.get('/user/ideal').then(function(response) {
+            if(response.data) {
+                return response.data;
+            }
+        })
+      },
+      saveIdeal : function(ideal) {
+        var idealToSave = {
+            size: ideal.size,
+            age: ideal.age,
+            sex: ideal.sex,
+            kids: ideal.kids,
+            dogs: ideal.dogs,
+            cats: ideal.cats
+        }
+          console.log('UserService -- get ideal');
+          $http.post('/user/ideal', idealToSave).then(function(response) {
+              if(response.data) {
+                  return response.data;
+              }
+          });
+      }
   };
 });

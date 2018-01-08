@@ -17,40 +17,57 @@
             <p></p>
 
             <div class="container user-container">
-                <form>
-                    <h3>Change Settings</h3>
-                    <label>Username</label>
-                    <input type="text" placeholder="Enter New Username" value="">
-                    <br>
-                    <label>Password</label>
-                    <input type="password" placeholder="Enter New Password" value="">
-                    <br>
-                    <label class="radio">
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Cats
-                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Dogs
-                    </label>
-                    <br>
-                    <label>Zip Code</label>
-                    <input type="number" placeholder="Enter New Zip Code" value="">
-                    <div class="col-sm-4">
-                        <select ng-model="lc.register.size" class="form-control" placeholder="ideal pet size">
-                            <option value="s">Small</option>
-                             <option value="m">Medium</option>
-                             <option value="l">Large</option>
-                         </select>
-                    </div><br>
-                     <label>
-                        <input type="radio" ng-model="lc.register.sex" value="F">
-                         Female
-                     </label><br/>
-                     <label>
-                         <input type="radio" ng-model="lc.register.sex" ng-value="M">
-                       Male
-                      </label>
-                      <br>
-                      <button type="cancel" class="btn">Cancel</button>
-                      <button type="submit" class="btn btn-default">Save</button><br>
+                <form ng-submit="uc.saveIdeal()">
+                    <select ng-model="uc.ideal.size" class="form-control" placeholder="ideal pet size">
+                        <option value="s">Small</option>
+                        <option value="m">Medium</option>
+                        <option value="l">Large</option>
+                    </select><br>
+                    <label>
+                        <input type="radio" ng-model="uc.ideal.sex" value="F">
+                        Female
+                    </label><br/>
+                    <label>
+                        <input type="radio" ng-model="uc.ideal.sex" ng-value="M">
+                        Male
+                    </label><br>
+                    <input class="btn btn-primary" type="submit" name="submit" value="Save" /><br>
+
                 </form>
+                <!--<form>-->
+                    <!--<h3>Change Settings</h3>-->
+                    <!--<label>Username</label>-->
+                    <!--<input type="text" placeholder="Enter New Username" value="">-->
+                    <!--<br>-->
+                    <!--<label>Password</label>-->
+                    <!--<input type="password" placeholder="Enter New Password" value="">-->
+                    <!--<br>-->
+                    <!--<label class="radio">-->
+                        <!--<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Cats-->
+                        <!--<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Dogs-->
+                    <!--</label>-->
+                    <!--<br>-->
+                    <!--<label>Zip Code</label>-->
+                    <!--<input type="number" placeholder="Enter New Zip Code" value=""><br>-->
+                    <!--<div class="col-sm-4">-->
+                        <!--<select ng-model="uc.ideal.size" class="form-control" placeholder="ideal pet size">-->
+                            <!--<option value="s">Small</option>-->
+                             <!--<option value="m">Medium</option>-->
+                             <!--<option value="l">Large</option>-->
+                         <!--</select>-->
+                    <!--</div><br>-->
+                     <!--<label>-->
+                        <!--<input type="radio" ng-model="uc.ideal.sex" value="F">-->
+                         <!--Female-->
+                     <!--</label><br/>-->
+                     <!--<label>-->
+                         <!--<input type="radio" ng-model="uc.ideal.sex" ng-value="M">-->
+                       <!--Male-->
+                      <!--</label>-->
+                      <!--<br>-->
+                      <!--<button type="cancel" class="btn">Cancel</button>-->
+                      <!--<button type="submit" class="btn btn-default">Save</button><br>-->
+                <!--</form>-->
             </div>
             <button class="btn btn-default btn-info col-6" ng-click="uc.userService.logout()">Log Out</button>
         </div>
